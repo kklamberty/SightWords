@@ -50,54 +50,50 @@ describe('Wordlist', function(){
         })
     });
 
-//    describe('remove(thing)', function(){
-//        it('should remove the word from the wordlist if it is there', function(){
-//            var wordlist1 = new Wordlist('unit1');
-//            wordlist1.add("bird");
-//            wordlist1.add("elephant");
-//            wordlist1.add("cat");
-//            wordlist1.add("dog");
-//            assert.equal(wordlist1.find("bird"), 0);
-//            wordlist1.remove('bird');
-//            assert.equal(wordlist1.words, [ 'elephant', 'cat', 'dog' ]);
-//        })
-//    });
+    describe('remove(thing)', function(){
+        it('should remove the word from the wordlist if it is there', function(){
+            var wordlist1 = new Wordlist('unit1');
+            wordlist1.add("bird");
+            wordlist1.add("elephant");
+            wordlist1.add("cat");
+            wordlist1.add("dog");
+            assert.equal(wordlist1.find("bird"), 0);
+            wordlist1.remove('bird');
+            assert.equal(wordlist1.words[0], "elephant");
+            assert.equal(wordlist1.words[1], "cat");
+            assert.equal(wordlist1.words[2], "dog");
+            var thingie = ["elephant", "cat", "dog"];
+            //assert.deepEqual(wordlist1.words, thingie);
+        });
+
+        it('should not die if asked to remove a word from the wordlist if it is not there', function(){
+            var wordlist1 = new Wordlist('unit1');
+            wordlist1.add("bird");
+            wordlist1.add("elephant");
+            wordlist1.add("cat");
+            wordlist1.add("dog");
+            assert.equal(wordlist1.find("whale"), -1);
+            wordlist1.remove('whale');
+            assert.equal(wordlist1.words[0], "bird");
+            assert.equal(wordlist1.words[1], "elephant");
+            assert.equal(wordlist1.words[2], "cat");
+            assert.equal(wordlist1.words[3], "dog");
+            //assert.deepEqual(wordlist1.words, thingie);
+        });
+
+        it('should remove all instances of the word from the wordlist if it is there', function(){
+            var wordlist1 = new Wordlist('unit1');
+            wordlist1.add("bird");
+            wordlist1.add("elephant");
+            wordlist1.add("cat");
+            wordlist1.add("dog");
+            wordlist1.add("bird");
+            assert.equal(wordlist1.find("bird"), 0);
+            wordlist1.remove('bird');
+            assert.equal(wordlist1.words[0], "elephant");
+            assert.equal(wordlist1.words[1], "cat");
+            assert.equal(wordlist1.words[2], "dog");
+        });
+    });
 });
-//
-//describe('stack', function(){
-//    describe('#push', function(){
-//        it('should return true if the variable is pushed', function(){
-//            var newstack = new MyStack()
-//            newstack.push("hello world")
-//            assert.equal(newstack.peek(), "hello world")
-//        })
-//    })
-//})
-//
-//describe('stack', function(){
-//    describe('#peek', function(){
-//        it('should return true if the the function sees the value of the last index of the stack', function(){
-//            var newstack = new MyStack()
-//            newstack.push("first entyr")
-//            newstack.push("hello world")
-//            assert.equal(newstack.peek(), "hello world")
-//        })
-//    })
-//})
-//
-//describe('stack', function(){
-//    describe('#pop', function(){
-//        it('should return true if the variable is popped', function(){
-//            var newstack = new MyStack()
-//            newstack.push("hello world")
-//            assert.equal("hello world", newstack.peek())
-//            newstack.pop()
-//            newstack.pop()
-//            assert.equal(true, newstack.isEmpty())
-//            newstack.push(0)
-//            newstack.push(1)
-//            newstack.pop()
-//            assert.equal(newstack.peek(), 0)
-//        })
-//    })
-//})
+
