@@ -5,7 +5,8 @@ var mongoose = require('mongoose');
 
 var wordlistSchema = new mongoose.Schema({
     name: String,
-    words: []
+    words: [],
+    includeInCurrent: Boolean
 });
 
 var Wordlist = mongoose.model('Wordlist', wordlistSchema);
@@ -45,4 +46,8 @@ Wordlist.prototype.remove = function (thing) {
     } else {
         this.words.remove(thing)
     }
+};
+
+Wordlist.prototype.updateName = function(name) {
+    this.name = name;
 };
