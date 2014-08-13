@@ -3,10 +3,12 @@
  */
 var mongoose = require('mongoose');
 
-var Wordlist = mongoose.model('Wordlist', {
+var wordlistSchema = new mongoose.Schema({
     name: String,
-    words: [String]
+    words: []
 });
+
+var Wordlist = mongoose.model('Wordlist', wordlistSchema);
 
 module.exports = Wordlist;
 
@@ -19,15 +21,15 @@ Wordlist.prototype.add = function (thing) {
 };
 
 Wordlist.prototype.join = function (otherList) {
-    for (i=0; i<otherList.words.length; i++) {
+    for (var i=0; i<otherList.words.length; i++) {
         this.add(otherList.words[i]);
         console.log(otherList.words[i]);
     }
 };
 
 Wordlist.prototype.find = function (thing) {
-    index = -1;
-    for (i=0; i<this.words.length; i++) {
+    var index = -1;
+    for (var i=0; i<this.words.length; i++) {
         if (this.words[i]==thing) {
             console.log("The item " + thing + " was found at location " + i);
             return i;
@@ -37,7 +39,7 @@ Wordlist.prototype.find = function (thing) {
 };
 
 Wordlist.prototype.remove = function (thing) {
-    index = Math.max(-1, this.find(thing));
+    var index = Math.max(-1, this.find(thing));
     if (index == -1){
         console.log("The item '" + thing + "' was not in the wordlist.");
     } else {
