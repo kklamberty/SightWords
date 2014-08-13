@@ -62,11 +62,8 @@ describe('Wordlist', function(){
             wordlist1.add("dog");
             assert.equal(wordlist1.find("bird"), 0);
             wordlist1.remove('bird');
-            assert.equal(wordlist1.words[0], "elephant");
-            assert.equal(wordlist1.words[1], "cat");
-            assert.equal(wordlist1.words[2], "dog");
-            //var thingie = ["elephant", "cat", "dog"];
-            //assert.deepEqual(wordlist1.words, thingie);
+            var thingie = ["elephant", "cat", "dog"];
+            assert.deepEqual(wordlist1.words.toObject(), thingie);
         });
 
         it('should not die if asked to remove a word from the wordlist if it is not there', function(){
@@ -77,10 +74,8 @@ describe('Wordlist', function(){
             wordlist1.add("dog");
             assert.equal(wordlist1.find("whale"), -1);
             wordlist1.remove('whale');
-            assert.equal(wordlist1.words[0], "bird");
-            assert.equal(wordlist1.words[1], "elephant");
-            assert.equal(wordlist1.words[2], "cat");
-            assert.equal(wordlist1.words[3], "dog");
+            var thingie = ["bird", "elephant", "cat", "dog"];
+            assert.deepEqual(wordlist1.words.toObject(), thingie);
         });
 
         it('should remove all instances of the word from the wordlist if it is there', function(){
@@ -92,9 +87,8 @@ describe('Wordlist', function(){
             wordlist1.add("bird");
             assert.equal(wordlist1.find("bird"), 0);
             wordlist1.remove('bird');
-            assert.equal(wordlist1.words[0], "elephant");
-            assert.equal(wordlist1.words[1], "cat");
-            assert.equal(wordlist1.words[2], "dog");
+            var thingie = ["elephant", "cat", "dog"];
+            assert.deepEqual(wordlist1.words.toObject(), thingie);
         });
     });
 
