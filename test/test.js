@@ -7,14 +7,14 @@ var Wordlist = require("../schemas/Wordlist");
 describe('Wordlist', function(){
     describe('isEmpty()', function(){
         it('should return true when the list is empty', function(){
-            var wordlist1 = new Wordlist('unit1');
+            var wordlist1 = new Wordlist({name: 'unit1', words: []});
             assert.equal(wordlist1.isEmpty(), true);
         })
     });
 
     describe('add(thing)', function(){
         it('should add the word to the list', function(){
-            var wordlist2 = new Wordlist('unit2');
+            var wordlist2 = new Wordlist({name: 'unit2', words:[]});
             wordlist2.add("cat");
             wordlist2.add("dog");
             assert.equal(wordlist2.words[0], "cat");
@@ -25,10 +25,10 @@ describe('Wordlist', function(){
 
     describe('join(otherlist)', function(){
         it('should combine two lists', function (){
-            var wordlist1 = new Wordlist('unit1');
+            var wordlist1 = new Wordlist({name: 'unit1', words:[]});
             wordlist1.add("bird");
             wordlist1.add("elephant");
-            var wordlist2 = new Wordlist('unit2');
+            var wordlist2 = new Wordlist({name: 'unit2', words:[]});
             wordlist2.add("cat");
             wordlist2.add("dog");
             wordlist1.join(wordlist2);
@@ -40,7 +40,7 @@ describe('Wordlist', function(){
 
     describe('find(thing)', function(){
         it('returns the index of an item if the item is in the list, else it returns -1', function(){
-            var wordlist1 = new Wordlist('unit1');
+            var wordlist1 = new Wordlist({name: 'unit1', words:[]});
             wordlist1.add("bird");
             wordlist1.add("elephant");
             wordlist1.add("cat");
@@ -52,7 +52,7 @@ describe('Wordlist', function(){
 
     describe('remove(thing)', function(){
         it('should remove the word from the wordlist if it is there', function(){
-            var wordlist1 = new Wordlist('unit1');
+            var wordlist1 = new Wordlist({name: 'unit1', words:[]});
             wordlist1.add("bird");
             wordlist1.add("elephant");
             wordlist1.add("cat");
@@ -62,12 +62,12 @@ describe('Wordlist', function(){
             assert.equal(wordlist1.words[0], "elephant");
             assert.equal(wordlist1.words[1], "cat");
             assert.equal(wordlist1.words[2], "dog");
-            var thingie = ["elephant", "cat", "dog"];
+            //var thingie = ["elephant", "cat", "dog"];
             //assert.deepEqual(wordlist1.words, thingie);
         });
 
         it('should not die if asked to remove a word from the wordlist if it is not there', function(){
-            var wordlist1 = new Wordlist('unit1');
+            var wordlist1 = new Wordlist({name: 'unit1', words:[]});
             wordlist1.add("bird");
             wordlist1.add("elephant");
             wordlist1.add("cat");
@@ -78,11 +78,10 @@ describe('Wordlist', function(){
             assert.equal(wordlist1.words[1], "elephant");
             assert.equal(wordlist1.words[2], "cat");
             assert.equal(wordlist1.words[3], "dog");
-            //assert.deepEqual(wordlist1.words, thingie);
         });
 
         it('should remove all instances of the word from the wordlist if it is there', function(){
-            var wordlist1 = new Wordlist('unit1');
+            var wordlist1 = new Wordlist({name: 'unit1', words:[]});
             wordlist1.add("bird");
             wordlist1.add("elephant");
             wordlist1.add("cat");
