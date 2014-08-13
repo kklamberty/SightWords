@@ -2,16 +2,13 @@
  * Created by lamberty on 8/6/14.
  */
 var mongoose = require('mongoose');
-module.exports = Wordlist;
 
 var Wordlist = mongoose.model('Wordlist', {
     name: String,
     words: [String]
 });
 
-function Wordlist(name) {
-    return new Wordlist({name: name, words: []});
-}
+module.exports = Wordlist;
 
 Wordlist.prototype.isEmpty = function () {
     return this.words.length == 0;
