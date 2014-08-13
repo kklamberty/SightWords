@@ -38,3 +38,12 @@ Wordlist.prototype.find = function (thing) {
     }
     return index;
 };
+
+Wordlist.prototype.remove = function (thing) {
+    index = Math.max(-1, this.find(thing));
+    if (index == -1){
+        console.log("The item '" + thing + "' was not in the wordlist.");
+    } else {
+        this.words.remove(thing)
+    }
+};
