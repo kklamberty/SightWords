@@ -1,0 +1,24 @@
+{
+  "name": "sightwords",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kklamberty/SightWords",
+  "authors": [
+    "kklamberty <lamberty@morris.umn.edu>"
+  ],
+  "description": "a way for teachers to manage lists of words for their students",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.22"
+  }
+}
