@@ -12,6 +12,15 @@
           </option>
           <option name="userDatabase" value="sightwords-test" />
         </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="sightwords-dev" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="userDatabase" value="sightwords-dev" />
+        </ServerConfiguration>
       </list>
     </option>
     <option name="shellPath" value="/usr/local/bin/mongo" />
