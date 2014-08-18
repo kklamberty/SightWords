@@ -2,6 +2,7 @@
 
 /*
  * Modified from https://github.com/elliotf/mocha-mongoose
+ * http://www.scotchmedia.com/tutorials/express/authentication/1/06
  */
 
 var config = require('../config');
