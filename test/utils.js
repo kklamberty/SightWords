@@ -21,15 +21,15 @@ beforeEach(function (done) {
         return done();
     }
 
-    if (mongoose.connection.readyState === 0) {
+    if (mongoose.connection.readyState !== 0) {
+        return clearDB();
+    } else {
         mongoose.connect(config.db.test, function (err) {
             if (err) {
                 throw err;
             }
             return clearDB();
         });
-    } else {
-        return clearDB();
     }
 });
 
