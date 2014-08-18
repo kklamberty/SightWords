@@ -1,10 +1,15 @@
 {
     "name": "sightwords",
     "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/kklamberty/SightWords.git"
+    },
     "devDependencies": {
-        "express": "4.8.4",
-        "should": "4.0.4",
-        "mongoose": "3.8.15",
-        "bootstrap": "0.0.2"
+        "bootstrap": "^3.2.0",
+        "express": "^4.8.4",
+        "mocha": "^1.21.4",
+        "mongoose": "^3.8.15",
+        "should": "^4.0.4"
     }
 }
