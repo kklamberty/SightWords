@@ -37,7 +37,9 @@ describe('Wordlist', function(){
             wordlist2.add("dog");
             wordlist1.join(wordlist2);
             console.log(wordlist1.words);
-            assert.equal(wordlist1.words.length, 4)
+            assert.equal(wordlist1.words.length, 4);
+            var thingie = ["bird", "elephant", "cat", "dog"];
+            assert.deepEqual(wordlist1.words.toObject(), thingie);
         });
     });
 
