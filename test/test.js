@@ -1,8 +1,9 @@
 /**
  * Created by lamberty on 8/6/14.
  */
+
 var assert = require("assert");
-var Wordlist = require("../schemas/Wordlist");
+var Wordlist = require("../schemas/wordlist");
 
 describe('Wordlist', function(){
     describe('isEmpty()', function(){

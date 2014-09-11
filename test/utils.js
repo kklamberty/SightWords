@@ -5,7 +5,7 @@
  * http://www.scotchmedia.com/tutorials/express/authentication/1/06
  */
 
-var config = require('../config');
+var config = require('./../config');
 var mongoose = require('mongoose');
 
 // ensure the NODE_ENV is set to 'test'
