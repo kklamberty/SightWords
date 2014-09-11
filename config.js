@@ -1,5 +1,5 @@
 /**
- * Created by lamberty on 8/7/14.
+ * Created by lamberty on 8/7/14. 
  */
 module.exports = {
     db: {
